@@ -21,7 +21,7 @@ ul.topnav li a {
 
 ul.topnav li a:hover:not(.active) {background-color: #111;}
 
-ul.topnav li a.active {background-color: #4CAF50;}
+ul.topnav li a.active {background-color: rgb(168, 168, 168);}
 
 ul.topnav li.right {float: right;}
 
@@ -191,7 +191,7 @@ button{
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
 }
 
@@ -199,6 +199,8 @@ button{
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
 }
+
+
