@@ -11,15 +11,27 @@
 
 <body>
 
-  <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
-    <source src="background-video.mp4" type="video/mp4">
+ 
+  <div id="video-container">
+    <div class="video-overlay"></div>
+    <div class="video-content">
+        <div class="inner">
+            <h1>Welcome to <em>Legend Arts</em></h1>
+            <p style="font-size: 40px;font-weight: bolder;">Homepage</p>
+            <p>Not only an epic arts gallery</p>
 
-  </video>
+        </div>
+    </div>
+
+    <video autoplay loop muted>
+        <source src="background-video.mp4" type="video/mp4" />
+    </video>
+</div>
 
   <!-- The Navi -->
   <ul class="topnav">
     <li><a id="HomeBtn" class="active" href="#home">Home</a></li>
-    <li><a id="ArtBtn" href="#news">Art</a></li>
+    <li><a id="ArtBtn" href="#news" onClick="location.href='art.html'">Art</a></li>
     <li class="right"><a id="AboutBtn" href="#about" onClick="location.href='about.html'">About Us</a>
     <li id="myBtnLogin" class="right"><a id="LoginBtn" href="#about">Login</a>
     <li id="myBtnRegister" class="right"><a id="RegisterBtn" href="#about">Register</a>
@@ -141,6 +153,10 @@
     <img src="" alt="">
     <div id="map"></div>
   </div>
+
+
+
+  
   <script src="./js/serialize.js"></script>
   <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js"></script>
   <script src="./js/mapbox.js"></script>

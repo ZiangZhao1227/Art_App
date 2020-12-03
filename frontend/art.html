@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Art Page</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/about.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .header {
+            text-align: center;
+            padding: 32px;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        /* Create four equal columns that sits next to each other */
+        .column {
+            -ms-flex: 25%;
+            /* IE10 */
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 800px) {
+            .column {
+                -ms-flex: 50%;
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .column {
+                -ms-flex: 100%;
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">Legend<em> Arts</em></a>
+        </div>
+    </nav>
+
+    <div class="page-heading">
+        <div class="container">
+            <div class="heading-content">
+                <h1>Art <em> Page</em></h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Photo grid -->
+    <div class="row">
+        <div class="column">
+            <img src="img/image1.jpg" style="width:100%" onclick="onClick(this)">
+            <img src="img/image2.jpg" style="width:100%" onclick="onClick(this)">
+            <img src="img/image3.jpeg" style="width:100%" onclick="onClick(this)">
+        </div>
+
+        <div class="column">
+            <img src="img/image4.jpg" style="width:100%" onclick="onClick(this)">
+            <img src="img/image5.jpg" style="width:100%" onclick="onClick(this)">
+            <img src="img/image6.jpg" style="width:100%" onclick="onClick(this)">
+        </div>
+
+        <div class="column">
+            <img src="img/image7.jpg" style="width:100%" onclick="onClick(this)">
+            <img src="img/image8.jpg" style="width:100%" onclick="onClick(this)">
+            <img src="img/image9.jpg" style="width:100%" onclick="onClick(this)">
+        </div>
+
+        <div class="column">
+            <img src="img/image10.jpg" style="width:100%" onclick="onClick(this)">
+            <img src="img/image11.jpg" style="width:100%" onclick="onClick(this)">
+            <img src="img/image12.jpg" style="width:100%" onclick="onClick(this)">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <p>Copyright &copy; 2020
+
+                    | Designed by Legend Group</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
