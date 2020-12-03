@@ -3,15 +3,7 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-body::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-/* Add a thumb */
-body::-webkit-scrollbar-thumb {
-  background: rgba(250, 250, 250, 0.5);
-}
+
 
 .page-heading {
   background-image: url(../img/heading_bg.jpg);
