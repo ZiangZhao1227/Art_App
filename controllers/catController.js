@@ -1,6 +1,6 @@
 'use strict';
 
-const catModel = require('../models/artModel');
+const catModel = require('../models/catModel');
 const { validationResult } = require('express-validator');
 const { makeThumbnail } = require('../utils/resize');
 const { getCoordinates } = require('../utils/imageMeta');

@@ -3,7 +3,7 @@
 const express = require('express');
 const { body } = require('express-validator');
 const multer = require('multer');
-const artController = require('../controllers/artController');
+const catController = require('../controllers/catController');
 const router = express.Router();
 
 //prevent multer for saving wrong file types
@@ -26,11 +26,11 @@ const fileFilter = (req, file, cb) => {
   };
   
 
-router.get('/', artController.cat_list_get);
+router.get('/', catController.cat_list_get);
 router.post(
   '/',
   upload.single('cat'),
-  artController.make_thumbnail,
+  catController.make_thumbnail,
   injectFile,
   [
     body('name', 'cant be empty').isLength({ min: 1 }),
@@ -39,9 +39,9 @@ router.post(
     body('owner', 'required').isLength({ min: 1 }).isNumeric(),
     body('type', 'not image').contains('image'),
   ],
-  artController.cat_create);
+  catController.cat_create);
 
-router.get('/:id', artController.cat_get_by_id);
+router.get('/:id', catController.cat_get_by_id);
 
 router.put('/',
     [
@@ -50,9 +50,9 @@ router.put('/',
       body('weight', 'must be a number').isLength({min: 1}).isNumeric(),
       body('owner', 'required').isLength({min: 1}).isNumeric(),
     ],
-    artController.cat_update_put);
+    catController.cat_update_put);
 
 
-router.delete('/:id', artController.cat_delete);
+router.delete('/:id', catController.cat_delete);
 
 module.exports = router;

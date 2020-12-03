@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const passport = require('./utils/pass.js');
 const rootRoute = require('./routes/rootRoute.js');
-const artRoute = require('./routes/artRoute.js');
+const catRoute = require('./routes/catRoute.js');
 const userRoute = require('./routes/userRoute.js');
 const authRoute = require('./routes/authRoute.js');
 const app = express();
@@ -20,7 +20,7 @@ app.use('/thumbnails', express.static('thumbnails'));
 //routes
 app.use('/', rootRoute);
 app.use('/auth', authRoute);
-app.use('/art', passport.authenticate('jwt', {session: false}), artRoute);
+app.use('/cat', passport.authenticate('jwt', {session: false}), catRoute);
 app.use('/user', passport.authenticate('jwt', {session: false}), userRoute);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
