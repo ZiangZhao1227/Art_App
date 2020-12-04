@@ -193,46 +193,72 @@ footer p {
   margin: 15px 0px;
 }
 
+.column {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.column img {
+  width: 100%;
+  height: auto;
+}
 
 .column .btn {
-  position: relative;
+  position: absolute;
+  top: 87.8%;
+  left: 36.5%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   background-color: #555;
   color: white;
   font-size: 16px;
-  padding: 10px 40px;
+  padding: 3px 6px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .column .btn-2 {
-  position: relative;
+  position: absolute;
+  top: 87.8%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   background-color: #555;
   color: white;
   font-size: 16px;
-  padding: 10px 40px;
+  padding: 3px 6px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .column .btn-3 {
-  position: relative;
+  position: absolute;
+  top: 87.8%;
+  left: 63.7%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   background-color: #555;
   color: white;
   font-size: 16px;
-  padding: 10px 40px;
+  padding: 3px 6px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .column .btn-4 {
-  position: relative;
+  position: absolute;
+  top: 87.8%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   background-color: #555;
   color: white;
   font-size: 16px;
-  padding: 10px 40px;
+  padding: 3px 6px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
