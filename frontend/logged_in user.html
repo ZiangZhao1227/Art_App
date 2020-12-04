@@ -156,6 +156,159 @@
         .hover-shadow:hover {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
+
+        /* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  border:0;
+}
+body{
+  font: 13px/100% tahoma;
+  }
+.clear{clear:both;}
+.wrapper{
+  width:400px;
+  margin:10px auto;
+}
+
+fieldset{
+  padding:10px;
+  background:rgb(230, 195, 0);
+}
+.form_grp{
+  margin-bottom:10px;
+}
+label{
+  width:100%;
+  height:32px;
+  line-height:32px;
+  display:block;
+  margin-bottom:10px;
+  font-size:18px;
+  color:#fff;
+ 
+}
+textarea{
+  width:100%;
+  height:100px;
+  padding:10px;
+  border:1px solid #eee;
+  resize:none;
+}
+button{
+  padding:5px 20px;
+  background-color:gray;
+  color:#fff;
+  float:right;
+}
+.viewCmnt{
+  clear:both;
+  overflow:hidden;
+  position:relative;
+  background:#c8e7fb;
+  border-bottom:1px solid black;
+}
+.viewCmnt p {
+  width:100%;
+  float:left;
+  padding:10px;
+  font-size:14px;
+  line-height:20px;
+  }
+.edit, .delete{
+  position:absolute;
+  width:20px;
+  height:20px;
+  display:none;
+  cursor:pointer;
+  bottom:5px;
+  padding:2px;
+   }
+.viewCmnt:hover .edit, .viewCmnt:hover .delete{
+  display:block;
+}
+.edit{
+  right:26px;  background:url(https://cdn4.iconfinder.com/data/icons/miu/22/editor_pencil_pen_edit_write_-16.png) no-repeat center #0e7ec7;
+}
+.delete{
+  right:5px;
+  background:url(https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/cross-24-16.png) no-repeat center #0e7ec7;
+  z-index:2;
+}
+
+
+
     </style>
 
 
@@ -181,10 +334,26 @@
 
   <!-- The Navi -->
   <ul class="topnav">
-    <li><a id="HomeBtn" class="active" href="#home" >Home</a></li>
-    <li><a id="ArtBtn" href="#news" >Art</a></li>
-      <li><a id="UpBtn" href="#news" >Upload</a></li>
+    <li><a id="ArtBtn" class="active" href="#home" >Art</a></li>
+    <li><a id="HomeBtn" href="#home" >Home</a></li>
+      <li><a id="UpBtn" href="#upload" class="open-button" onclick="openForm()" >Upload</a></li>
+      <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <h1 style="color: black;font-weight: bolder;font-size: x-large;font-style: italic;">Upload</h1>
+      
+          <label for="email"><b>Description</b></label>
+          <input type="text" placeholder="Please add your description here:" name="text" required>
+      
+          <label for="file"><b>Choose file</b></label>
+          <input type="file" placeholder="Add a picture here:" name="file" required>
+      
+          <button type="submit" class="btn" style="margin-top: 18px;">Submit</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+        </form>
+        
+      </div>
     <li class="right"><a id="AboutBtn" href="#about" >About Us</a>
+        <li><a id="LogoutBtn" href="#logout" >Logout</a></li>
     
     </li>
     <li id="log-out" class="right" style="display: none;"><a id="LogoutBtn" href="#log-out">Log out<p id="user-info">
@@ -285,6 +454,7 @@
     </div>
 </div>
 
+
 <div id="myModal" class="modal">
     <span class="close cursor" onclick="closeModal()">&times;</span>
     <div class="modal-content">
@@ -292,6 +462,7 @@
         <div class="mySlides">
             <div class="numbertext">1 / 12</div>
             <img src="img/image1.jpg" style="width:100%">
+            
         </div>
 
         <div class="mySlides">
@@ -348,7 +519,7 @@
             <div class="numbertext">12 / 12</div>
             <img src="img/image12.jpg" style="width:100%">
         </div>
-
+       
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
@@ -358,7 +529,7 @@
 
 
         <div class="column">
-            <img class="demo cursor" src="img/image1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Name" >
+            <img class="demo cursor" src="img/image1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Name"  >
         </div>
         <div class="column">
             <img class="demo cursor" src="img/image2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Name">
@@ -394,6 +565,27 @@
             <img class="demo cursor" src="img/image12.jpg" style="width:100%" onclick="currentSlide(12)" alt="Name">
         </div>
     </div>
+    <div class="wrapper">
+      <div class="commentBoxfloat">
+        <form id="cmnt">
+          <fieldset>
+            <div class="form_grp">
+              <label>comment</label>
+              <textarea id="userCmnt" placeholder="Write your comment here. You can Edit and Delete options. Just Hover in Your comment, you see the both buttons"></textarea>        
+            </div>
+            <div class="form_grp">
+            <button type="button" id="submit">Submit</button>
+            </div>
+          </fieldset>
+        </form>  
+      </div>
+        
+        <div id="cmntContr"></div>
+        
+        
+       </div>
+    </div>
+    
 </div>
 
 <script>
@@ -433,6 +625,15 @@
     dots[slideIndex-1].className += " active";
     captionText.innerHTML = dots[slideIndex-1].alt;
   }
+
+  function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
 </script>
 
 
