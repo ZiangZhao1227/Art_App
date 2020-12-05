@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   console.log('rootRoute: root route with req: ', req.query);
-  res.sendFile(`${process.cwd()}/week2_public_html/index5.html`);
+  res.sendFile(`${process.cwd()}/frontend/index5.html`);
 });
 
 router.post('/', (req, res) => {
