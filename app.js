@@ -4,9 +4,10 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const passport = require('./utils/pass.js');
 const rootRoute = require('./routes/rootRoute.js');
-const catRoute = require('./routes/catRoute.js');
+const artRoute = require('./routes/artRoute.js');
 const userRoute = require('./routes/userRoute.js');
 const authRoute = require('./routes/authRoute.js');
+const commentRoute = require('./routes/commentRoute.js');
 const app = express();
 const port = 3000;
 
@@ -20,9 +21,9 @@ app.use('/thumbnails', express.static('thumbnails'));
 //routes
 app.use('/', rootRoute);
 app.use('/auth', authRoute);
-app.use('/cat', passport.authenticate('jwt', {session: false}), catRoute);
+app.use('/art', passport.authenticate('jwt', {session: false}), artRoute);
 app.use('/user', passport.authenticate('jwt', {session: false}), userRoute);
-
+app.use('/comment', passport.authenticate('jwt', {session: false}), commentRoute);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 

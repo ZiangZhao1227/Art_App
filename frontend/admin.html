@@ -14,7 +14,6 @@
 
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js"></script>
 
 </head>
 
@@ -38,234 +37,98 @@
   <ul class="topnav">
     
     <li><a id="ArtBtn" class="active" href="#news" >Art</a></li>
-    <li class="right"><a id="AboutBtn" href="#about" >About Us</a>
-    <li><a id="LogoutBtn" href="#logout" >Logout</a></li>
-    
-    </li>
-    <li id="log-out" class="right" style="display: none;"><a id="LogoutBtn" href="#log-out">Log out<p id="user-info">
-        </p></a></li>
+ 
+    <li id="log-out" class="right"><a id="LogoutBtn" href="#log-out">Log out<p id="user-info"></p></a></li>
+   
   </ul>
 
 
 
-
-
-
-
-<!-- Photo grid -->
-
-<div class="row">
-    <div class="column_img">
-        <img src="img/image1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image3.jpeg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image7.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image8.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image9.jpg" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image10.jpg" style="width:100%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image11.jpg" style="width:100%" onclick="openModal();currentSlide(11)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-    <div class="column_img">
-        <img src="img/image12.jpg" style="width:100%" onclick="openModal();currentSlide(12)" class="hover-shadow cursor">
-        <button class="btn"><i class="fa fa-heart-o"></i></button>
-        <button class="btn-2"><i class="fa fa-comment"></i></button>
-        <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-        <button class="btn-4"><i class="fa fa-trash-o"></i></button>
-    </div>
-</div>
-
-<div id="myModal" class="modal">
-    <span class="close cursor" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-
-        <div class="mySlides">
-            <div class="numbertext">1 / 12</div>
-            <img src="img/image1.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">2 / 12</div>
-            <img src="img/image2.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">3 / 12</div>
-            <img src="img/image3.jpeg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">4 / 12</div>
-            <img src="img/image4.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">5 / 12</div>
-            <img src="img/image5.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">6 / 12</div>
-            <img src="img/image6.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">7 / 12</div>
-            <img src="img/image7.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">8 / 12</div>
-            <img src="img/image8.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">9 / 12</div>
-            <img src="img/image9.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">10 / 12</div>
-            <img src="img/image10.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">11 / 12</div>
-            <img src="img/image11.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">12 / 12</div>
-            <img src="img/image12.jpg" style="width:100%">
-        </div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        <div class="caption-container">
-            <p id="caption"></p>
-        </div>
-
-
-        <div class="column_img">
-            <img class="demo cursor" src="img/image1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Name" >
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image3.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image9.jpg" style="width:100%" onclick="currentSlide(9)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image10.jpg" style="width:100%" onclick="currentSlide(10)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image11.jpg" style="width:100%" onclick="currentSlide(11)" alt="Name">
-        </div>
-        <div class="column_img">
-            <img class="demo cursor" src="img/image12.jpg" style="width:100%" onclick="currentSlide(12)" alt="Name">
-        </div>
-    </div>
-</div>
-
-</div>
-
-<footer>
-    <div class="container-fluid">
-        <div class="col-md-12">
-            <p>Copyright &copy; 2020
-
-                | Designed by Legend Group</p>
-        </div>
-    </div>
-</footer>
-
-
-
-</body>
-
-</html>
+      <!-- The upload form -->
+      <div class="form-popup" id="myForm1">
+          <form id="add-art-form" class="form-container" enctype="multipart/form-data">
+              <h1 style="color: black;font-weight: bolder;font-size: x-large;font-style: italic;">Upload</h1>
+  
+              <label for="description"><b>Description</b></label>
+              <input type="text" placeholder="Please add your description here:" name="description" required>
+  
+              <label for="file"><b>Choose file</b></label>
+              <input type="file" placeholder="Add a picture here:" name="art" accept="img/*"required>
+              <input type="hidden" placeholder="Owner" name="owner" id="owner" style="display: none;"required>
+              <button type="submit" class="btn" style="margin-top: 18px;">Submit</button>
+              <button type="button" class="btn cancel" onclick="closeForm_new()">Cancel</button>
+          </form>
+      </div>
+  
+  
+  
+      <!-- Photo grid -->
+  
+      <div class="row test2">
+  
+      </div>
+  
+      <div id="myImgModal" class="modal">
+          <span class="close cursor" onclick="closeImgModal()">&times;</span>
+          <div id="load_mySlides" class="modal-content">
+  
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+              <div class="caption-container">
+                  <p id="caption"></p>
+              </div>
+  
+  
+          </div>
+  
+      </div>
+  
+  
+      <div class="form-popup" id="myFormComment">
+          <div class="wrapper">
+              <div class="commentBoxfloat">
+                  <form id="add-comment-form">
+                      <fieldset>
+                          <div class="form_grp">
+                              <label>comment</label>
+                              <textarea id="comment" name="comment"
+                                  placeholder="Write your comment here. You can Edit and Delete options. Just Hover in Your comment, you see the both buttons"></textarea>
+                          </div>
+                          <input type="hidden" name="user_id" id="user_id"style="display: none;"required>
+                          <input type="hidden" name="art_id" id="art_id" style="display: none;"required>
+                          <input type="hidden" name="co_type" id="co_type" style="display: none;"required>
+                          
+                          <div class="form_grp">
+                              <button type="button" onclick="closeForm_Comment()" id="cancel">Cancel</button>
+                              <button type="submit">Submit</button>
+                          </div>
+                      </fieldset>
+                  </form>
+              </div>
+              <div id="cmntContr"></div>
+          </div>
+      </div>
+  
+      
+  
+  
+  
+      <footer>
+          <div class="container-fluid">
+              <div class="col-md-12">
+                  <p>Copyright &copy; 2020
+  
+                      | Designed by Legend Group</p>
+              </div>
+          </div>
+      </footer>
+  
+  
+      <script src="./js/serialize.js"></script>
+      <script src="./js/main_admin.js"></script>
+  
+  
+  </body>
+  
+  </html>

@@ -5,8 +5,8 @@
   <meta charset="utf8">
   <title>Home Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css" rel="stylesheet" />
   <link href="./css/style2.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/about.css">
 </head>
 
 <body>
@@ -30,22 +30,22 @@
     <li><a id="HomeBtn" class="active" href="#home" onClick="location.href='index.html'">Home</a></li>
     <li><a id="ArtBtn" href="#news" onClick="location.href='art.html'">Art</a></li>
     <li class="right"><a id="AboutBtn" href="#about" onClick="location.href='about.html'">About Us</a>
-    <li id="myBtnLogin" class="right"><a id="LoginBtn" href="#about">Login</a>
-    <li id="myBtnRegister" class="right"><a id="RegisterBtn" href="#about">Register</a>
+  
     </li>
-    <li id="log-out" class="right" style="display: none;"><a id="LogoutBtn" href="#log-out">Log out<p id="user-info">
-        </p></a></li>
+    <li id="log-out" class="right" style="display: none;"><a id="LogoutBtn" href="#log-out">Log out<p id="user-info"></p></a></li>
   </ul>
 
-
- 
   <div id="video-container">
     <div class="video-overlay"></div>
     <div class="video-content">
         <div class="inner">
             <h1>Welcome to <em>Legend Arts</em></h1>
             <p style="font-size: 40px;font-weight: bolder;">Homepage</p>
+            <li id="myBtnLogin" class="right"><a id="LoginBtn" href="#about">Login</a>
+              <li id="myBtnRegister" class="right"><a id="RegisterBtn" href="#about">Register</a>
             <p>Not only an epic arts gallery</p>
+    
+
 
         </div>
     </div>
@@ -54,13 +54,15 @@
         <source src="background-video.mp4" type="video/mp4" />
     </video>
 </div>
+ 
+
 
 
 
 
 
   <!-- The Modal -->
-  <div id="myModal" class="modal">
+  <div id="myModalLogin" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
@@ -170,12 +172,19 @@
     <div id="map"></div>
   </div>
 
+  <footer style="margin-top: -50px;">
+    <div class="container-fluid">
+      <div class="col-md-12">
+        <p>Copyright &copy; 2020
+
+          | Designed by Legend Group</p>
+      </div>
+    </div>
+  </footer>
 
 
   
   <script src="./js/serialize.js"></script>
-  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js"></script>
-  <script src="./js/mapbox.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

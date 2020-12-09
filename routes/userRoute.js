@@ -1,24 +1,23 @@
 'use strict';
-
 const express = require('express');
-const { body } = require('express-validator');
-const userController = require('../controllers/userController');
 const router = express.Router();
+const {body} = require('express-validator');
+const authController = require('../controllers/authController');
 
-router.get('/', userController.user_list_get);
-router.post(
-  '/',
-  [
-    body('name', 'minimum length 3 characters').isLength({ min: 3 }),
-    body('email', 'is not valid email').isEmail(),
-    body(
-      'passwd',
-      'minimum length 8 characters, at least one capital letter'
-    ).matches('(?=.*[A-Z]).{8,}'),
-  ],
-  userController.user_create
+router.post('/login',  [
+  body('email', 'email is not valid').isEmail(),
+  body('password', 'at least one upper case letter'),
+],authController.login);
+router.get('/logout', authController.logout);
+router.post('/register',
+    [
+      body('name', 'minimum 3 characters').isLength({min: 3}),
+      body('email', 'email is not valid').isEmail(),
+      body('password', 'at least one upper case letter').
+      matches('(?=.*[A-Z]).{8,}'),
+    ],
+    authController.user_create_post,
+    authController.login,
 );
-
-router.get('/:id', userController.user_get_by_id);
 
 module.exports = router;

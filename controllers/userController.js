@@ -10,7 +10,6 @@ const user_list_get = async (req, res) => {
   res.json(users);
 };
 
-
 const user_get_by_id = async (req, res) => {
   console.log('userController: http get user with path param', req.params);
   const user = await userModel.getUser(req.params.id);
@@ -24,7 +23,7 @@ const user_create = async (req, res) => {
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
-  const id = await userModel.addUser(req);
+  const id = await userModel.insertUser(req);
   const user = await userModel.getUser(id);
   res.send(user);
 };

@@ -7,7 +7,7 @@ const getUser = async (id) => {
     console.log('userModel.getUser', id);
     const [
       rows,
-    ] = await promisePool.execute('SELECT * FROM wop_user WHERE user_id = ?', [
+    ] = await promisePool.execute('SELECT * FROM art_user_info WHERE user_id = ?', [
       id,
     ]);
     return rows[0];
@@ -18,7 +18,7 @@ const getUser = async (id) => {
 
 const getAllUsers = async () => {
   try {
-    const [rows] = await promisePool.execute('SELECT * FROM wop_user');
+    const [rows] = await promisePool.execute('SELECT * FROM art_user_info');
     return rows;
   } catch (e) {
     console.error('userModel:', e.message);
@@ -29,7 +29,7 @@ const getUserLogin = async (params) => {
   try {
     console.log(params);
     const [rows] = await promisePool.execute(
-      'SELECT * FROM wop_user WHERE email = ?;',
+      'SELECT * FROM art_user_info WHERE email = ?;',
       params
     );
     return rows;
@@ -41,8 +41,7 @@ const getUserLogin = async (params) => {
 const insertUser = async (req) => {
   try {
     const [rows] = await promisePool.execute(
-        'INSERT INTO wop_user (name, email, password)' +
-        'VALUES (?, ?, ?)',
+        'INSERT INTO art_user_info (name, email, password) VALUES (?, ?, ?);',
         [
           req.body.name,
           req.body.username,
@@ -55,11 +54,10 @@ const insertUser = async (req) => {
   }
 };
 
-
 const updateUser = async (id, req) => {
   try {
     const [rows] = await promisePool.execute(
-        'UPDATE wop_user SET name = ?, email = ?, password = ?' +
+        'UPDATE art_user_info SET name = ?, email = ?, password = ?' +
         'WHERE user_id = ?;', [
           req.body.name, req.body.username, req.body.passwd, id,
         ]);
@@ -75,7 +73,7 @@ const updateUser = async (id, req) => {
 const deleteUser = async (id, req) => {
   try {
     const [rows] = await promisePool.execute(
-        'DELETE FROM wop_user WHERE user_id = ?;',
+        'DELETE FROM art_user_info WHERE user_id = ?;',
         [id]);
     console.log('userModel delete', rows);
   } catch (e) {

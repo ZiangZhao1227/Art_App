@@ -14,8 +14,8 @@
 
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="./css/style2.css" rel="stylesheet">
 
-  <script src="js/main.js"></script>
 
 
 </head>
@@ -41,148 +41,77 @@
     <li><a id="HomeBtn" href="#home" onClick="location.href='index.html'">Home</a></li>
     <li><a id="ArtBtn" class="active" href="#news" onClick="location.href='art.html'">Art</a></li>
     <li class="right"><a id="AboutBtn" href="#about" onClick="location.href='about.html'">About Us</a>
-    <li id="myBtnLogin" class="right"><a id="LoginBtn" href="#about">Login</a>
-    <li id="myBtnRegister" class="right"><a id="RegisterBtn" href="#about">Register</a>
+    
     </li>
     <li id="log-out" class="right" style="display: none;"><a id="LogoutBtn" href="#log-out">Log out<p id="user-info">
         </p></a></li>
   </ul>
 
 
+  
+  <div id="myModalLogin" class="modal">
 
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h3>Login</h3>
+      </div>
+      <div class="modal-body">
+        <div class="forms" id="login-wrapper">
+          <div class="form-wrapper">
 
+            <form id="login-form" class="light-border">
+              <div>
+                <label>Email:</label>
+                <input class="light-border" type="text" name="username" />
+              </div>
+              <div>
+                <label>Password:</label>
+                <input class="light-border" type="password" name="password" />
+              </div>
+              <div>
+                <button class="light-border" type="submit">Log In</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Photo grid -->
-
-  <div class="row">
-    <div class="column_img">
-      <img src="img/image1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image3.jpeg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image7.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image8.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image9.jpg" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image10.jpg" style="width:100%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image11.jpg" style="width:100%" onclick="openModal();currentSlide(11)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
-    <div class="column_img">
-      <img src="img/image12.jpg" style="width:100%" onclick="openModal();currentSlide(12)" class="hover-shadow cursor">
-      <button class="btn"><i class="fa fa-heart-o"></i></button>
-      <button class="btn-3"><i class="fa fa-cloud-download"></i></button>
-    </div>
   </div>
 
-  <div id="myModal" class="modal">
-    <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div id="myModalRegister" class="modal">
+
+    <!-- Modal content -->
     <div class="modal-content">
-
-      <div class="mySlides">
-        <div class="numbertext">1 / 12</div>
-        <img src="img/image1.jpg" style="width:100%">
-
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h3>Register</h3>
       </div>
-
-      <div class="mySlides">
-        <div class="numbertext">2 / 12</div>
-        <img src="img/image2.jpg" style="width:100%">
+      <div class="modal-body">
+        <div class="form-wrapper">
+          <form class="light-border" id="add-user-form">
+            <input class="light-border" type="text" name="name" pattern=".{3,}" placeholder="Name" required>
+            <input class="light-border" type="email" name="username" placeholder="email" required>
+            <input class="light-border" type="password" name="password" pattern="(?=.*[A-Z]).{8,}"
+              placeholder="Password" required>
+            <button class="light-border" type="submit">Save</button>
+          </form>
+        </div>
       </div>
+    </div>
 
-      <div class="mySlides">
-        <div class="numbertext">3 / 12</div>
-        <img src="img/image3.jpeg" style="width:100%">
-      </div>
+  </div>
+  <!-- Photo grid -->
 
-      <div class="mySlides">
-        <div class="numbertext">4 / 12</div>
-        <img src="img/image4.jpg" style="width:100%">
-      </div>
+  <div class="row test2">
 
-      <div class="mySlides">
-        <div class="numbertext">5 / 12</div>
-        <img src="img/image5.jpg" style="width:100%">
-      </div>
+  </div>
 
-      <div class="mySlides">
-        <div class="numbertext">6 / 12</div>
-        <img src="img/image6.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">7 / 12</div>
-        <img src="img/image7.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">8 / 12</div>
-        <img src="img/image8.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">9 / 12</div>
-        <img src="img/image9.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">10 / 12</div>
-        <img src="img/image10.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">11 / 12</div>
-        <img src="img/image11.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">12 / 12</div>
-        <img src="img/image12.jpg" style="width:100%">
-      </div>
-
-
+  <div id="myImgModal" class="modal">
+    <span class="close cursor" onclick="closeImgModal()">&times;</span>
+    <div id="load_mySlides" class="modal-content">
 
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -192,47 +121,62 @@
       </div>
 
 
-      <div class="column_img">
-        <img class="demo cursor" src="img/image1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image3.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image9.jpg" style="width:100%" onclick="currentSlide(9)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image10.jpg" style="width:100%" onclick="currentSlide(10)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image11.jpg" style="width:100%" onclick="currentSlide(11)" alt="Name">
-      </div>
-      <div class="column_img">
-        <img class="demo cursor" src="img/image12.jpg" style="width:100%" onclick="currentSlide(12)" alt="Name">
-      </div>
-
     </div>
 
-
   </div>
+
+  <h1 style="color: aliceblue;text-align: center;font-weight: bolder;font-size: 38px;">
+    Login to upload your own art
+  </h1>
+
+ 
+  <div id="public_static_view">
+    <div class="row">
+      <div class="column_img">
+        <img src="img/image1.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image2.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image3.jpeg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image4.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image5.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image6.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image7.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image8.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image9.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image10.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image11.jpg" style="width:100%" onclick=showAlert() class="hover-shadow cursor">
+      </div>
+      <div class="column_img">
+        <img src="img/image12.jpg" style="width:100%"  onclick=showAlert() class="hover-shadow cursor">
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
 
 
 
@@ -246,8 +190,16 @@
     </div>
   </footer>
 
+  <script src="./js/serialize.js"></script>
 
+  
 
+<script>
+    function showAlert() {
+    var myText = "Please login first!";
+    alert (myText);
+  }
+</script>
 </body>
 
 </html>

@@ -337,6 +337,19 @@ nav {
 }
 
 
+#LoginBtn,#RegisterBtn {
+  display: inline-table;
+  border-radius: 14px;
+  background-color:grey;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 15px;
+  width: 200px;
+  cursor: pointer;
+  margin-left: 70px;
+}
 
 
 

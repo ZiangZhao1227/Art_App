@@ -10,9 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/about.css">
-
-
-
+    <link href="./css/style2.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,8 +34,7 @@
     <li><a id="HomeBtn"  href="#home" onClick="location.href='index.html'">Home</a></li>
     <li><a id="ArtBtn" href="#news" onClick="location.href='art.html'">Art</a></li>
     <li class="right"><a id="AboutBtn" href="#about" onClick="location.href='about.html'"  class="active">About Us</a>
-    <li id="myBtnLogin" class="right"><a id="LoginBtn" href="#about">Login</a>
-    <li id="myBtnRegister" class="right"><a id="RegisterBtn" href="#about">Register</a>
+
     </li>
     <li id="log-out" class="right" style="display: none;"><a id="LogoutBtn" href="#log-out">Log out<p id="user-info">
         </p></a></li>
@@ -115,7 +112,62 @@
         </div>
     </footer>
 
+  <!-- The Modal -->
+  <div id="myModalLogin" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h3>Login</h3>
+      </div>
+      <div class="modal-body">
+        <div class="forms" id="login-wrapper">
+          <div class="form-wrapper">
+
+            <form id="login-form" class="light-border">
+              <div>
+                <label>Email:</label>
+                <input class="light-border" type="text" name="username" />
+              </div>
+              <div>
+                <label>Password:</label>
+                <input class="light-border" type="password" name="password" />
+              </div>
+              <div>
+                <button class="light-border" type="submit">Log In</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="myModalRegister" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h3>Register</h3>
+      </div>
+      <div class="modal-body">
+        <div class="form-wrapper">
+          <form class="light-border" id="add-user-form">
+            <input class="light-border" type="text" name="name" pattern=".{3,}" placeholder="Name" required>
+            <input class="light-border" type="email" name="username" placeholder="email" required>
+            <input class="light-border" type="password" name="password" pattern="(?=.*[A-Z]).{8,}"
+              placeholder="Password" required>
+            <button class="light-border" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 </body>
-
+<script src="./js/serialize.js"></script>
 </html>
