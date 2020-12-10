@@ -42,14 +42,15 @@ ul.topnav li.right {float: right;}
 ul {
   margin: 0;
   padding: 0;
-  list-style-type: none;
   display: flex;
   flex-wrap: nowrap;
 }
 
 li {
+  list-style-type: none;
   width: 30%;
   margin: .5em;
+
 }
 
 figure {
@@ -346,9 +347,9 @@ nav {
   text-align: center;
   font-size: 28px;
   padding: 15px;
-  width: 200px;
+  width: 40%;
   cursor: pointer;
-  margin-left: 70px;
+  margin-left: 100px;
 }
 
 
@@ -358,4 +359,25 @@ nav {
 @media screen and (max-width: 600px) {
   ul.topnav li.right, 
   ul.topnav li {float: none;}
+  #LoginBtn{
+    margin-left: 10%;
+    padding: 15px;
+    width: 40%;
+  }
+#RegisterBtn{
+  margin-left: 0%;
+    padding: 15px;
+    width: 40%;
+}
+#video-container .video-content .inner p  {
+  font-size: 15px;
+  font-weight: bolder;
+  letter-spacing: 3.5px;
+
+}
+#video-container .video-content .inner h1 {
+  font-size: 34px;
+}
+
+
 }
