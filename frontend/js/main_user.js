@@ -335,6 +335,7 @@ addCommentForm.addEventListener('submit', async (evt) => {
   } else {
     getByuserArt(sessionStorage.getItem('user_id'));
   }
+  getComment(art_id.value)
 });
 // logout
 logOut.addEventListener('click', async (evt) => {
