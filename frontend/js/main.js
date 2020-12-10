@@ -1,5 +1,5 @@
 'use strict';
-const url = '..'; // change url when uploading to server
+const url = '.'; // change url when uploading to server
 
 // select existing html elements
 const loginWrapper = document.querySelector('#login-wrapper');
