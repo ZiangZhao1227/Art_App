@@ -352,6 +352,20 @@ nav {
   margin-left: 100px;
 }
 
+/* For large screen */
+@media only screen and (max-width:1800px) {
+
+  #LoginBtn{
+    margin-left: 27%;
+    padding: 15px;
+    width: 40%;
+  }
+  #RegisterBtn{
+    margin-left: 27%;
+    padding: 15px;
+    width: 40%;
+  }
+}
 
 
 
