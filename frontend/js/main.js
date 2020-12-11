@@ -40,7 +40,7 @@ loginForm.addEventListener('submit', async (evt) => {
     body: JSON.stringify(data),
   };
 
-  const response = await fetch('http://10.114.32.38/app' + '/auth/login', fetchOptions);
+  const response = await fetch('.' + '/auth/login', fetchOptions);
   const json = await response.json();
   console.log('login response', json);
   if (!json.user) {
