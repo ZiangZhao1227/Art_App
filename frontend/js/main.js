@@ -1,5 +1,5 @@
 'use strict';
-const url = 'http://10.114.32.38/app'; // change url when uploading to server
+const url = '..'; // change url when uploading to server
 
 // select existing html elements
 const loginWrapper = document.querySelector('#login-wrapper');
@@ -40,7 +40,7 @@ loginForm.addEventListener('submit', async (evt) => {
     body: JSON.stringify(data),
   };
 
-  const response = await fetch(url + '/auth/login', fetchOptions);
+  const response = await fetch('http://10.114.32.38/app' + '/auth/login', fetchOptions);
   const json = await response.json();
   console.log('login response', json);
   if (!json.user) {
