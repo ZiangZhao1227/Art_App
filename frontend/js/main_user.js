@@ -1,5 +1,5 @@
 'use strict';
-const url = '..'; // change url when uploading to server
+const url = '.'; // change url when uploading to server
 // select existing html elements
 const addArtForm = document.querySelector('#add-art-form');
 const addCommentForm = document.querySelector('#add-comment-form');
