@@ -25,6 +25,11 @@ const art_get_by_uid = async (req, res) => {
   const art = await artModel.getAllbyUserId(req.params.uid);
   res.json(art);
 };
+const art_get_by_user = async (req, res) => {
+  console.log('artController: http get art with path param', req.params.uid);
+  const art = await artModel.getAllArtsByUser(req.params.uid);
+  res.json(art);
+};
 
 
 const make_thumbnail = async (req, res, next) => {
@@ -81,4 +86,5 @@ module.exports = {
   art_get_by_uid,
   art_delete,
   make_thumbnail,
+  art_get_by_user,
 };

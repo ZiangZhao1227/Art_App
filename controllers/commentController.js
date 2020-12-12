@@ -25,6 +25,19 @@ const comment_get_by_uid = async (req, res) => {
   res.json(comment);
 };
 
+const like_create = async (req, res) => {
+  console.log('commentController: http get like with path param', req.params.art_id, req.params.user_id, req.params.status);
+  const like = await commentModel.insertLike(req.params.art_id, req.params.user_id, req.params.status);
+  res.json(like);
+};
+
+const like_update = async (req, res) => {
+ const like = await commentModel.updateLike(req.params.art_id, req.params.user_id, req.params.status);
+  res.json(`{message: "updated... ${like}"}`);
+  console.log('commentController: http get like update with path param', req.params.art_id, req.params.user_id, req.params.status);
+
+};
+
 const comment_create = async (req, res) => {
   console.log('commentController comment_create', req.body);
   const errors = validationResult(req);
@@ -57,6 +70,8 @@ module.exports = {
   comment_list_get,
   comment_get_by_id,
   comment_create,
+  like_create,
+  like_update,
   comment_update_put,
   comment_get_by_uid,
   comment_delete,

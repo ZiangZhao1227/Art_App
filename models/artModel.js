@@ -37,18 +37,25 @@ const insertArt = async (req, coords) => {
   }
 };
 
+
 const getAllArts = async () => {
   try {
     console.log('artModel getAllArts');
-    const [rows] = await promisePool.execute(`SELECT art_id, art_gallery.description, owner, filename, user_id, art_user_info.name 
-    AS ownername FROM art_gallery LEFT JOIN art_user_info ON owner = user_id`
-    );
+    const [rows] = await promisePool.execute('SELECT art_gallery.art_id, art_gallery.description, owner, filename, art_user_info.user_id, art_likes.like_type AS status, art_user_info.name AS ownername FROM art_gallery LEFT JOIN art_user_info ON art_gallery.owner = art_user_info.user_id LEFT JOIN art_likes ON art_likes.art_id= art_gallery.art_id;' );
     return rows;
   } catch (e) {
     console.error('artModel getAllArts:', e.message);
   }
 };
-
+const getAllArtsByUser = async (uid) => {
+  try {
+    console.log('artModel getAllArts');
+    const [rows] = await promisePool.execute('SELECT art_gallery.art_id, art_gallery.description, owner, filename, art_user_info.user_id, art_likes.like_type AS status, art_user_info.name AS ownername FROM art_gallery LEFT JOIN art_user_info ON art_gallery.owner = art_user_info.user_id LEFT JOIN art_likes ON art_likes.art_id= art_gallery.art_id and art_likes.user_id= ? ORDER by art_gallery.art_id;',[uid,]);
+    return rows;
+  } catch (e) {
+    console.error('artModel getAllArtsByUser:', e.message);
+  }
+};
 
 const getAllbyUserId = async (uid) => {
   try {
@@ -58,7 +65,7 @@ const getAllbyUserId = async (uid) => {
     );
     return rows;
   } catch (e) {
-    console.error('artModel getAllArtsByUsers:', e.message);
+    console.error('artModel getAllbyUserId:', e.message);
   }
 };
 
@@ -95,7 +102,9 @@ module.exports = {
   getAllArts,
   getArt,
   getAllbyUserId,
+  getAllArtsByUser,
   insertArt,
   updateArt,
   deleteArt,
+
 };

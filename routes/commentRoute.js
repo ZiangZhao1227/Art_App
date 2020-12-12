@@ -15,6 +15,13 @@ router.post(
   ],
   commentController.comment_create);
 
+router.post(
+    '/like/:art_id/:user_id/:status',
+    commentController.like_create);
+router.post(
+    '/likeupdate/:art_id/:user_id/:status',
+    commentController.like_update);
+
 router.get('/', commentController.comment_list_get);
 
 

@@ -45,6 +45,8 @@ router.get('/:id', artController.art_get_by_id);
 
 router.get('/art/:uid', artController.art_get_by_uid);
 
+router.get('/getart/:uid', artController.art_get_by_user);
+
 router.put('/',
     [
       body('description', 'cannot be empty').isLength({min: 1}),

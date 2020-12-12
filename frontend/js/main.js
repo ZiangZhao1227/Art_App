@@ -40,7 +40,7 @@ loginForm.addEventListener('submit', async (evt) => {
     body: JSON.stringify(data),
   };
 
-  const response = await fetch('.' + '/auth/login', fetchOptions);
+  const response = await fetch(url + '/auth/login', fetchOptions);
   const json = await response.json();
   console.log('login response', json);
   if (!json.user) {
@@ -107,11 +107,11 @@ addUserForm.addEventListener('submit', async (evt) => {
   };
   const response = await fetch(url + '/auth/register', fetchOptions);
   const json = await response.json();
-  sessionStorage.setItem('token', json.token);
+  //sessionStorage.setItem('token', json.token);
  
-  loginWrapper.style.display = 'none';
-  logOut.style.display = 'block';
-  userInfo.innerHTML = `Hello ${json.user.name}`;
+  //loginWrapper.style.display = 'none';
+  //logOut.style.display = 'block';
+  //userInfo.innerHTML = `Hello ${json.user.name}`;
   
 });
 

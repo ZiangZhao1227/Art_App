@@ -31,8 +31,8 @@ function openImgModal() {
   document.getElementById("myImgModal").style.display = "block";
 }
 
-function closeImgModal() {  
-  document.getElementById("myImgModal").style.display ='none';
+function closeImgModal() {
+  document.getElementById("myImgModal").style.display = 'none';
 }
 
 var slideIndex = 1;
@@ -96,9 +96,58 @@ const createArtCards = (arts) => {
     const img_div = document.createElement('div');
     img_div.className = "column_img";
 
+
+    const btnlike = document.createElement('button');
+    const btnlikeI = document.createElement('i');
+    
+    btnlikeI.className = "fa fa-heart-o";
+    btnlike.appendChild(btnlikeI);
+    btnlike.className = "btn-4";
+    if (art.status == 1) {
+      btnlike.style.background = "blue";
+    }
+    else {
+      btnlike.style.background = "pink";
+    }
+   
+    btnlike.addEventListener('click', async () => {
+      const fetchOptions = {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+        },
+      };
+      try {
+        var response;
+        if (art.status != 1) {
+          response = await fetch(url + '/comment/like/' + art.art_id + '/' + sessionStorage.getItem('user_id') + '/' + 1, fetchOptions);
+
+        }
+        else {
+          response = await fetch(url + '/comment/likeupdate/' + art.art_id + '/' + sessionStorage.getItem('user_id') + '/' + 0, fetchOptions);
+
+        }
+        const json = await response.json();
+        console.log('like  response', json);
+        if (btnHome.className == "active") {
+          getArt();
+          console.log('Home Active');
+        } else {
+          getByuserArt(sessionStorage.getItem('user_id'));
+        }
+      }
+      catch (e) {
+        console.log(e.message());
+      }
+
+    });
+
+
+
+
     // comment btn
     const btnComment = document.createElement('button');
-    btnComment.style.background="gold"
+    btnComment.style.background = "gold"
     const btnCommentI = document.createElement('i');
     btnCommentI.className = "fa fa-comment";
     btnComment.appendChild(btnCommentI);
@@ -112,7 +161,7 @@ const createArtCards = (arts) => {
 
     // download btn
     const btnDownload = document.createElement('button');
-    btnDownload.style.background="green"
+    btnDownload.style.background = "green"
     const btnDownloadI = document.createElement('i');
     btnDownloadI.className = "fa fa-cloud-download";
     btnDownload.appendChild(btnDownloadI);
@@ -124,7 +173,7 @@ const createArtCards = (arts) => {
     });
 
     const btntrash = document.createElement('button');
-    btntrash.style.background="red";
+    btntrash.style.background = "red";
     const btntrashI = document.createElement('i');
     btntrashI.className = "fa fa-trash-o";
     btntrash.appendChild(btntrashI);
@@ -157,11 +206,13 @@ const createArtCards = (arts) => {
     img_div.appendChild(img);
     if (btnHome.className != "active") {
       img_div.appendChild(btntrash);
+
+    }
+    else {
+      img_div.appendChild(btnlike);
     }
     img_div.appendChild(btnDownload);
-    
     img_div.appendChild(btnComment);
-
     div.appendChild(img_div);
 
     const mySlidesdiv = document.createElement('div');
@@ -237,7 +288,8 @@ const getArt = async () => {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
       },
     };
-    const response = await fetch(url + '/art', options);
+    const uid = sessionStorage.getItem('user_id')
+    const response = await fetch(url + '/art/getart/'+uid, options);
     const arts = await response.json();
     createArtCards(arts);
     showSlides(slideIndex);
@@ -253,7 +305,7 @@ const createCommentCards = (comments) => {
     const ElementDiv = document.createElement('div');
     ElementDiv.className = "dis_comment";
     const ElementP = document.createElement('h2');
- 
+
     ElementP.className = "left";
     ElementP.innerHTML = comment.owner_name;
     ElementP.style.color = "blue";
@@ -262,7 +314,7 @@ const createCommentCards = (comments) => {
     const ElementP1 = document.createElement('p');
     ElementP1.className = "left";
     ElementP1.innerHTML = comment.comment;
-    ElementP1.style.fontWeight="bolder"
+    ElementP1.style.fontWeight = "bolder"
 
     ElementDiv.appendChild(ElementP);
     ElementDiv.appendChild(ElementP1);
@@ -272,7 +324,6 @@ const createCommentCards = (comments) => {
 
 };
 
-
 const getComment = async (id) => {
   console.log('getComment token', sessionStorage.getItem('token'));
   try {
@@ -281,7 +332,7 @@ const getComment = async (id) => {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
       },
     };
-    const response = await fetch(url + '/comment/'+id, options);
+    const response = await fetch(url + '/comment/' + id, options);
     const comments = await response.json();
     createCommentCards(comments);
   }
@@ -464,6 +515,6 @@ btnLogout.addEventListener('click', function (e) {
   btnHome.className = "";
   btnArt.className = "";
   btnUpload.className = "";
- 
+
   btnLogout.className = "active";
 });

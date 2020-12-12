@@ -33,6 +33,39 @@ const insertComment = async (req, coords) => {
     return 0;
   }
 };
+const insertLike = async (art_id,user_id,status) => {
+  try {
+    const [rows] = await promisePool.execute(
+      'INSERT INTO art_likes( art_id, user_id, like_type) VALUES (?,?,?);',
+      [
+        
+        art_id,
+        user_id,
+        status,
+      ]
+    );
+    console.log('CommentModel insert:', rows);
+    return rows.insertId;
+  } catch (e) {
+    console.error('CommentModel insertComment:', e);
+    return 0;
+  }
+};
+
+
+const getLike = async (art_id,user_id) => {
+  try {
+    console.log('CommentModel getComment', id);
+    const [rows] = await promisePool.execute(
+      'SELECT * FROM art_comment LEFT JOIN art_likes where art_id = ? and  user_id=?;',
+      [art_id,user_id]
+    );
+    return rows;
+  } catch (e) {
+    console.error('CommentModel:', e.message);
+  }
+};
+
 
 const getAllComments = async () => {
   try {
@@ -76,6 +109,21 @@ const updateComment = async (req) => {
   }
 };
 
+const updateLike = async (art_id,user_id,status) => {
+  try {
+    const [rows] = await promisePool.execute(
+        'DELETE FROM art_likes WHERE art_id = ? and user_id = ? ;',
+        [
+          art_id,
+          user_id,
+          ]);
+    console.log('CommentModel like update', row);
+    return rows.affectedRows === 1;
+  } catch (e) {
+    return false;
+  }
+};
+
 const deleteComment = async (id) => {
   try {
     const [
@@ -95,4 +143,7 @@ module.exports = {
   insertComment,
   updateComment,
   deleteComment,
+  insertLike,
+  updateLike,
+  getLike,
 };
