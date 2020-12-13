@@ -1,5 +1,5 @@
 'use strict';
-const url = '.'; // change url when uploading to server
+const url = '..'; // change url when uploading to server
 // select existing html elements
 const addArtForm = document.querySelector('#add-art-form');
 const addCommentForm = document.querySelector('#add-comment-form');
@@ -50,6 +50,10 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
   var captionText = document.getElementById("caption");
+  captionText.style.fontSize="40px";
+  captionText.style.fontWeight="bolder";
+  captionText.style.fontFamily="Garamond, serif";
+
   if (n > slides.length) { slideIndex = 1 }
   if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
@@ -104,10 +108,10 @@ const createArtCards = (arts) => {
     btnlike.appendChild(btnlikeI);
     btnlike.className = "btn-4";
     if (art.status == 1) {
-      btnlike.style.background = "blue";
+      btnlike.style.background = "pink";
     }
     else {
-      btnlike.style.background = "pink";
+      btnlike.style.background = "grey";
     }
    
     btnlike.addEventListener('click', async () => {

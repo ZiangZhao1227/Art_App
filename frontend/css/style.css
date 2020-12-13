@@ -20,7 +20,7 @@
 
   .width_img {
     width: 100%;
-    height: 40%;
+    height: 20% !important;
   }
   
   /* The Modal (background) */
@@ -115,7 +115,7 @@
   img {
     margin-bottom: -4px;
     height: 350px !important;
-    border:  double lightgray 8px;
+    border:  double rgb(255, 255, 255) 12px;
   }
   
   .caption-container {
@@ -177,8 +177,8 @@
     resize:none;
   }
   button{
-    padding:5px 20px;
-    background-color:gray;
+    padding:5px 46px;
+    background-color:grey;
     color:#fff;
     float:right;
   }
@@ -229,7 +229,7 @@
 
     bottom: 23px;
     right: 28px;
-    width: 280px;
+    
 }
 
 /* The popup form - hidden by default */
@@ -298,15 +298,14 @@
   img {
     margin-bottom: -14px;
     height: 100px !important;
-    border:  double lightgray 4px;
+    border:  double white 2px;
   }
 .h1_title{
   color: aliceblue;text-align: center;font-weight: bolder;font-size: 18px;
 }
 
 button{
-  padding:5px 30px;
-  background-color:gray;
+  padding:18px 25px;
   color:#fff;
   float:right;
 }
@@ -315,8 +314,39 @@ button{
   color: white;
   position: absolute;
   top: 100px;
-  right: -1px;
+  right: -4px;
   font-size: 35px;
   font-weight: bold;
 }
+.prev,
+.next {
+  margin-top: 30px;
+}
+
+.column_img{
+  width: 55%;
+}
+.row > .column_img {
+  padding-left: 85px;
+  padding-bottom: 24px;
+}
+
+* {
+  box-sizing: content-box;
+}
+
+.form-container input[type=text]{
+  padding: 6px;
+}
+
+.form-container .btn{
+  padding: 4px;
+  height: 35px;
+}
+.form-popup{
+  right: 23px;
+}
+
+
+
 }

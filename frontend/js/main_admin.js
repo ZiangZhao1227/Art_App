@@ -1,5 +1,5 @@
 'use strict';
-const url = '.'; // change url when uploading to server
+const url = '..'; // change url when uploading to server
 // select existing html elements
 const addArtForm = document.querySelector('#add-art-form');
 const addCommentForm = document.querySelector('#add-comment-form');
@@ -343,18 +343,14 @@ function closeForm_Comment() {
 btnArt.addEventListener('click', function (e) {
   getArt();
   btnArt.className = "active";
-  btnAbout.className = "";
+ 
   btnLogout.className = "";
 });
 
-btnAbout.addEventListener('click', function (e) {
-  btnArt.className = "";
-  btnAbout.className = "active";
-  btnLogout.className = "";
-});
+
 
 btnLogout.addEventListener('click', function (e) {
   btnArt.className = "";
-  btnAbout.className = "";
+
   btnLogout.className = "active";
 });
