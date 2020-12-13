@@ -178,7 +178,7 @@
   }
   button{
     padding:5px 46px;
-    background-color:grey;
+    background-color:#5ff300;
     color:#fff;
     float:right;
   }
@@ -269,7 +269,6 @@
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-    background-color: black;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -345,8 +344,24 @@ button{
 }
 .form-popup{
   right: 23px;
+  width: 86%;
 }
-
+.left{
+  padding-left: 23px;
+}
+label{
+  padding-left: 180px;
+}
+textarea{
+  width: 85%;
+  height: 86px;
+  padding: 10px;
+  padding-left: 26px;
+}
+fieldset{
+  width: 10%;
+  padding: 25px;
+}
 
 
 }
